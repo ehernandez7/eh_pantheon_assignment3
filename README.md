@@ -1,3 +1,18 @@
+**Hello this is Evan's part of the readme**
+
+To recreate my processes:
+
+1. Travel to the experiment folder inside of src
+2. Then run generate_trace.py 50 10 60 50mbps_data.trace (speed, delay, timing)
+3. Then run cp 50mbps_data.trace 50mbps_ack.trace
+4. Then go to the root of pantheon and run mm-link tests/50mbps_data.trace tests/50mbps_ack.trace   --uplink-log=experiment_logs/50mbps_datalink.log   --downlink-log=experiment_logs/50 mbps_acklink.log --   python2 src/experiments/tunnel_manager_updated.py --auto-test --scheme cubic --data-dir experiment_logs/50mbps_cubic
+(Change the last line to what scheme you want and --scheme)
+5. Then go to experiment_logs in pantheon and create a folder for that data files (5) and repeat step 4 2 more times for 2 other schemes and then 3 through 5 for slower with higher latency.
+6. Then run the plot.py function
+7. Then go into plot.py and change the names from 1mbps files to 50mbps or vice versa respectively.
+
+
+
 # Pantheon of Congestion Control
 The Pantheon contains wrappers for many popular practical and research
 congestion control schemes. The Pantheon enables them to run on a common
